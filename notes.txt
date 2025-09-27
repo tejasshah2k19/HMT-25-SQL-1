@@ -1,0 +1,191 @@
+Data --> Basic input 
+
+Data --> process -> important data -> process data -> INFORMATION
+
+store -> manage -> System -> DBMS 
+
+
+Data -> input -> type ?
+
+youtube : video 
+amazon  : text , images 
+bank    : transaction ,text 
+
+
+Types of DBMS -> 
+
+DR -> MS , MD , DIS MBBS , mind , 
+
+NDBMS 
+OODBMS 
+DDBMS
+RDBMS -->  Oracle , MySql , MSSQL , PG , 
+
+Relational Database Mgmt System 
+
+
+data --> table -> 
+
+table -> ROW * COL
+
+royal -> 
+college -> 
+
+                 Students 
+--------------------------------------------------
+rollNum     firstName      lastName     contactNum      
+1               X           L           12132                         
+2               Y           A           32569
+3               Z           S           56565
+
+
+column -> vertical -> field 
+record -> tuple -> row
+
+-----------------------------------------------------------
+
+                        SQL 
+            DDL     DML         DCL/TQL
+
+
+
+Data Defination Language 
+
+Data Manipulation Language 
+
+transaction Query Language 
+transaction control Language 
+
+
+-----------------------------------------------------------
+
+
+DBMS -> ORALCE -> college -> 
+        Students -> table -> 
+
+            new table : create 
+            new add   : insert 
+            modify    : update 
+            remove    : delete 
+            read      : select  
+
+
+how to create table in database ? 
+using create command 
+
+create table students(
+    rollNum integer unique ,
+    firstName varchar2(30) not null,
+    lastName varchar2(30) not null,
+    contactNum int unique
+); 
+
+
+
+data type =>
+
+integer -> numeric -> whole numbers [ 500 25 60 30 ]
+varchar2 -> string -> alpha numeric [ alexa , google , royal123 , sam234 ]
+
+
+rules -> constraints  ->
+    unique 
+    not null 
+
+how to delete entire table from database ? 
+DROP 
+
+drop table students;
+
+
+
+create table students(
+    rollNum integer unique ,
+    firstName varchar2(30) not null,
+    lastName varchar2(30) not null,
+    contactNum int unique
+)
+
+
+
+
+
+if you use int or integer in Oracle -> it will convert into NUMBER 
+we can not set size in int and integer 
+to assign size we need to use number 
+
+
+create table students(
+    rollNum integer(10) unique ,
+    firstName varchar2(30) not null,
+    lastName varchar2(30) not null,
+    contactNum int(11) unique
+)
+
+
+create table students(
+    rollNum integer(10) unique ,
+    firstName varchar2(30) not null,
+    lastName varchar2(30) not null,
+    contactNum integer(11) unique
+)
+
+
+int vs number
+
+------------------------------------------------------------------------------------
+
+constraints -> primary key 
+
+primary key --> not null , unique 
+
+can we assign more than 1 constraints to a column -> 
+
+create table students(
+    rollNum number(10) unique not null ,
+    firstName varchar2(30) not null,
+    lastName varchar2(30) not null,
+    contactNum number(10) unique not null 
+)
+
+
+create table students(
+    rollNum number(10) primary key ,
+    firstName varchar2(30) not null,
+    lastName varchar2(30) not null,
+    contactNum number(10) unique not null 
+)
+
+
+------------------------------------------------------------------------------------
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
