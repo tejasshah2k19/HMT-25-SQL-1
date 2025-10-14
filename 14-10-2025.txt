@@ -1,0 +1,97 @@
+SQL 
+
+
+    Oracle 
+    MySQL 
+    MS SQL 
+    PG 
+
+
+SQL  --> commands 
+    1)  DDL  : create , alter 
+    2)  DML  : insert , select 
+    3)  DCL 
+-----------------------------------------------------------------------------------------
+
+DataBase -> INFORMATION -> type -> 
+
+Amazon ->
+    table : 
+        products 
+        productName     price       qty         brandName       offer       
+
+        users 
+        firstName       lastName    dob        gender       
+
+
+        orders 
+        
+        
+        payment 
+
+
+-------------------------------------------------------------------------------------------
+
+table -> Relational -> 
+    RDBMS 
+
+
+-------------------------------------------------------------------------------------------
+
+table -> rows * cols { attribute , field } 
+
+
+users -> 
+    firstName       lastName        guestCount      city 
+    Jack            Patel           5               Himatnagar 
+    Rohan           Gupta           4               Ahmedabad 
+ 
+create table  users(
+    firstName varchar2(20),
+    lastName varchar2(20),
+    guestCount int,
+    city varchar2(20)
+);
+
+data types ---> 
+    firstName : a-z A-Z 
+            char(20)
+            varchar(20)
+            varchar2(20)
+
+char(20) -> royal 
+20 byte   :  5 byte : -15 
+
+varchar(20) -> 
+royal : 5 byte 
+
+varchar2(20) -> 
+royal : 5 byte 
+
+---------------------------------------------------------------------------
+
+how to insert record in table : 
+
+    insert into users (firstName,lastName,guestCount,city) values ('Jack','Patel',5,'Himatnagar'); 
+
+
+---------------------------------------------------------------------------
+
+how to print all the records from table: 
+how to fetch all the recrods from table : 
+
+    select firstName,lastName,guestCount,city  from  users; 
+
+    select * from users; 
+
+
+    select firstName from users;
+
+
+---------------------------------------------------------------------------
+
+how to add new column in existing table? 
+
+add email column / field inside users table. 
+
+alter table users add email varchar2(25); 
