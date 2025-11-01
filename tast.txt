@@ -1,0 +1,92 @@
+1)
+employees ->        
+                employeeId
+                full name 
+                empCode  E143 
+                salary 
+                city 
+    create 
+
+2) 
+    3 employees record add 
+    insert 
+    insert 
+    insert 
+3) 
+    Query -> 3 record read ? 
+
+    select * from employees;  
+--------------------------------------------------------------------------------------------
+
+
+
+
+
+Real estate firm that lists property for sale. 
+The following describes the organization:
+    The firm has a number of sales offices in several states.
+
+    Each sales office is assigned one or more employees.
+    An employee must be assigned to only one sales office.
+
+    For each sales office, there is always one employee assigned to manage that office. 
+    An employee may manage only one sales office to which he/she is assigned.
+    
+    The firm (sales office) lists property for sale.
+
+    Each unit of property must be listed with one (and only one) of the sales offices.
+    A sales office may have any number of properties listed, or may have no properties listed.
+    Each unit of property has one or more owners. An owner may have one or more units of property.
+
+
+ 
+PPT ->person place thing 
+
+state
+employees
+owners 
+properties 
+offices 
+-------------------------------------------------------------------------------------
+
+A department employs many employees but each employee is employed by one department. 
+A division operates many department but each Department is operated by one division. 
+An employee may be assigned many projects and one project may have many employees assigned to it.
+One of the employees. One of the employees runs each division and each division is run by only one employee.
+
+
+departments 
+employees 
+division 
+projects 
+
+
+
+
+-------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

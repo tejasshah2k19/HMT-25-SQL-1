@@ -1,0 +1,68 @@
+ table 
+
+ row * cols 
+
+
+ table : products
+
+    productId 1 2 3 4 5        
+    productName
+    qty
+    price
+    discount
+
+
+
+    numeric -> number -> whole numbers [ 1,2,3,4,5 ]
+                      -> real numbers / floating point number  [ 11.11,2.2,33.6]
+
+
+    only whole numbers ->   
+            int 
+            integer 
+
+    real numbers -> fraction -> floating point number 
+            float 
+
+
+
+
+productName -> 
+    a-z A-Z 0-9 any characters 
+
+                char 
+                varchar
+                varchar2 
+
+
+-------------------------------------------------------------------------------------------------------------------
+
+
+audio
+file
+video 
+product image ->    blob 
+                    clob 
+
+
+
+-------------------------------------------------------------------------------------------------------------------
+product add -> date add ? 
+
+date 
+datetime 
+
+
+date -> data type -> ? 
+
+14-dec-2025
+14-12-2025
+
+-------------------------------------------------------------------------------------------------------------------
+boolean -> true false 
+bit 
+
+
+
+-------------------------------------------------------------------------------------------------------------------
+

@@ -1,0 +1,120 @@
+ products ->
+            productId
+            productName
+            price 
+            qty 
+            discount 
+
+            3 records 
+
+            display all records from product table 
+
+
+-------------------------------------------------------------------------------------------            
+
+create table products (
+    productId int,
+    productName varchar2(25),
+    price int,
+    qty int ,
+    discount int
+);
+
+
+insert into products (productId,productName,price,qty,discount) values (1,'iphone 17',120000,10,10); 
+
+insert into products (productId,productName,price,qty,discount) values (2,'iphone 16',110000,15,15);
+
+insert into products (productId,productName,price,qty,discount) values (3,'Legion Y 520',180000,60,7); 
+
+
+select * from products;
+
+select * from products order by productId; //ASC 1 2 3 4 
+
+select * from products order by productId dsc ; //DESC 3 2 1 
+
+
+
+
+-------------------------------------------------------------------------------------------            
+
+how to remove table? 
+drop 
+
+drop table products; 
+
+create table products (
+    productId int,
+    productName varchar2(25),
+    price int,
+    qty int ,
+    discount int,
+    createdAt date
+);
+
+
+
+insert into products (productId,productName,price,qty,discount,createdAt) values (1,'iphone 17',120000,10,10,'10-dec-2024'); 
+
+insert into products (productId,productName,price,qty,discount,createdAt) values (2,'iphone 16',110000,15,15,'10-12-2024');
+insert into products (productId,productName,price,qty,discount,createdAt) values (3,'Legion Y 520',180000,60,7,'2024-12-10'); 
+insert into products (productId,productName,price,qty,discount,createdAt) values (3,'Legion Y 520',180000,60,7,'2024-dec-10'); 
+
+insert into products (productId,productName,price,qty,discount,createdAt) values (2,'iphone 16',110000,15,15,'12-dec-2024');
+insert into products (productId,productName,price,qty,discount,createdAt) values (3,'Legion Y 520',180000,60,7,'11-dec-2024'); 
+
+select * from products; 
+
+
+
+productname   price 
+
+
+select productName , price from products;
+
+
+select productName as "Product Name"  , price from products;
+
+
+isAvailable 
+    true / false 
+    boolean 
+
+
+
+
+drop 
+    drop table products; 
+
+create ->new column 
+    create table products (
+        productId int,
+        productName varchar2(25),
+        price int,
+        qty int ,
+        discount int,
+        createdAt date,
+        isAvailable boolean
+    );
+
+add 3 record 
+
+
+insert into products (productId,productName,price,qty,discount,createdAt,isAvailable) values (1,'iphone 17',120000,10,10,'10-dec-2024',true); 
+insert into products (productId,productName,price,qty,discount,createdAt,isAvailable) values (2,'iphone 16',110000,15,15,'12-dec-2024',false);
+insert into products (productId,productName,price,qty,discount,createdAt,isAvailable) values (3,'Legion Y 520',180000,60,7,'11-dec-2024',true); 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
