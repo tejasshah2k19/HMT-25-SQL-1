@@ -1,0 +1,23 @@
+rollNum -> data type -> number - integer 
+
+date_of_birth -> date 
+
+photograph -> blob clob 
+
+
+how to list all the data from products table? 
+select * from products;
+
+
+
+list out all the producs which belogns to electronics category? 
+select * from products WHERE category = 'Electronics' ; 
+
+list out all the products who's price range is between 5000 to 50,000?
+select * from products WHERE price >= 5000 AND price <=50000 
+select * from producs WHERE price between 5000 and 50000 
+
+
+---------------------------------------------------------
+
+

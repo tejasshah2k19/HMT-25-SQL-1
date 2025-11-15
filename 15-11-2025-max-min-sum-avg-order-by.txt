@@ -1,0 +1,149 @@
+MIN MAX AVG COUNT 
+
+SELECT * FROM PRODUCTS; 
+
+
+SELECT PRICE FROM PRODUCTS; 
+
+
+SELECT MAX(PRICE),* FROM PRODUCTS; 
+
+
+SELECT MAX(PRICE) FROM PRODUCTS; 
+
+SELECT * FROM PRODUCTS where PRICE  = (SELECT MAX(PRICE) FROM PRODUCTS); 
+
+select MIN(price) from PRODUCTS; 
+
+
+SELECT * FROM PRODUCTS where price = (select MIN(price) from PRODUCTS);
+
+
+SELECT SUM(price) from PRODUCTS; 
+
+SELECT AVG(price) from PRODUCTS; 
+
+SELECT COUNT(price) from PRODUCTS; 
+
+SELECT COUNT(*) from PRODUCTS; 
+
+
+total investment of the company ? with price and QTY
+
+SELECT PRICE * QTY FROM PRODUCTS; 
+
+SELECT PRICE * QTY FROM PRODUCTS; 
+
+SELECT SUM(PRICE * QTY) FROM PRODUCTS; 
+
+Find out in which products we have invested highest capital ? 
+
+SELECT MAX(PRICE * QTY) FROM PRODUCTS; 
+
+SELECT * FROM PRODUCTS where price * qty = (SELECT MAX(PRICE * QTY) FROM PRODUCTS); 
+
+
+ProductName   investment 
+Laptop          XXXXX
+Smartphone      XXXXX 
+
+
+alias -> 
+
+SELECT Product_Name , price * qty INVESTMENT from PRODUCTS; 
+
+SELECT Product_Name , price * qty AS INVESTMENT from PRODUCTS; 
+
+SELECT Product_Name , price * qty AS "INVESTMENT AMOUNT" from PRODUCTS; 
+
+
+----------------------------------------------------------------------------------------------
+
+
+data sort -> 
+        1) ASCENDING -> small to large 
+        2) DESCENDING -> large to small 
+
+SELECT * FROM PRODUCTS
+
+keyword -> order by 
+
+SELECT * FROM PRODUCTS order by PRICE ASC;
+SELECT * FROM PRODUCTS order by PRICE DESC;
+
+SELECT * FROM PRODUCTS order by PRODUCT_NAME ASC; 
+
+
+----------------------------------------------------------------------------------------------
+
+1) print all products details in alphabetically A-Z order
+    SELECT * from products ORDER BY PRODUCT_NAME ASC ; 
+
+2) print all products details in highest to lowest price order 
+    SELECT * from products ORDER BY PRICE DESC ; 
+
+
+3) print all products with their investment AMOUNT in lowest to highest order 
+    SELECT * from products ORDER BY PRICE*QTY ASC ;
+   SELECT PRODUCT_NAME,PRICE*QTY from products ORDER BY PRICE*QTY ASC ;
+
+ 
+----------------------------------------------------------------------------------------------
+    SELECT PRODUCT_NAME,PRICE*QTY from products ORDER BY PRICE*QTY ASC ;
+
+
+----------------------------------------------------------------------------------------------
+multicolumn sort 
+
+    SELECT PRODUCT_NAME,PRICE*QTY from products ORDER BY PRICE*QTY ASC, PRODUCT_NAME ASC ;
+
+
+    SELECT PRODUCT_NAME,PRICE*QTY from products ORDER BY PRICE*QTY ASC, PRODUCT_NAME ASC  ;
+
+----------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
