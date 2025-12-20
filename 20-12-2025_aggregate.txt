@@ -1,0 +1,273 @@
+    CREATE TABLE employee (
+        emp_id INT PRIMARY KEY,
+        first_name VARCHAR(50),
+        last_name VARCHAR(50),
+        dept VARCHAR(30),
+        job_title VARCHAR(50),
+        salary DECIMAL(10,2),
+        hire_date DATE,
+        city VARCHAR(30),
+        status VARCHAR(10)
+    );
+
+INSERT INTO employee VALUES
+(101, 'Rahul', 'Sharma', 'IT', 'Developer', 60000, '15-MAR-2021', 'Ahmedabad', 'Active'),
+(102, 'Priya', 'Patel', 'HR', 'HR Executive', 45000, '10-JUL-2020', 'Surat', 'Active'),
+(103, 'Amit', 'Mehta', 'Finance', 'Accountant', 50000, '20-JAN-2019', 'Ahmedabad', 'Active'),
+(104, 'Neha', 'Verma', 'IT', 'Tester', 48000, '05-JUN-2022', 'Vadodara', 'Active'),
+(105, 'Suresh', 'Iyer', 'Admin', 'Office Manager', 40000, '12-SEP-2018', 'Mumbai', 'Inactive'),
+(106, 'Kiran', 'Joshi', 'IT', 'Developer', 65000, '01-NOV-2021', 'Pune', 'Active'),
+(107, 'Anjali', 'Desai', 'Marketing', 'SEO Analyst', 42000, '25-FEB-2020', 'Ahmedabad', 'Active'),
+(108, 'Vikas', 'Singh', 'Sales', 'Sales Exec', 38000, '01-DEC-2019', 'Delhi', 'Active'),
+(109, 'Ritu', 'Kapoor', 'HR', 'Recruiter', 47000, '18-AUG-2021', 'Delhi', 'Active'),
+(110, 'Manoj', 'Gupta', 'Finance', 'Analyst', 55000, '14-APR-2017', 'Jaipur', 'Inactive'),
+
+(111, 'Pooja', 'Nair', 'IT', 'Developer', 70000, '10-JAN-2023', 'Kochi', 'Active'),
+(112, 'Arjun', 'Reddy', 'Sales', 'Sales Manager', 75000, '21-MAY-2018', 'Hyderabad', 'Active'),
+(113, 'Sneha', 'Kulkarni', 'Marketing', 'Content Writer', 41000, '30-SEP-2022', 'Pune', 'Active'),
+(114, 'Ramesh', 'Patil', 'Admin', 'Clerk', 32000, '11-NOV-2016', 'Nashik', 'Inactive'),
+(115, 'Kavita', 'Shah', 'Finance', 'Accountant', 52000, '17-MAR-2020', 'Ahmedabad', 'Active'),
+(116, 'Deepak', 'Mishra', 'IT', 'Tech Lead', 90000, '01-FEB-2015', 'Bangalore', 'Active'),
+(117, 'Nina', 'Roy', 'HR', 'HR Manager', 80000, '19-JUN-2016', 'Kolkata', 'Active'),
+(118, 'Sanjay', 'Bansal', 'Sales', 'Sales Exec', 39000, '10-OCT-2021', 'Indore', 'Active'),
+(119, 'Mehul', 'Trivedi', 'IT', 'Support Engg', 35000, '04-APR-2022', 'Ahmedabad', 'Active'),
+(120, 'Isha', 'Malhotra', 'Marketing', 'Brand Manager', 68000, '08-AUG-2019', 'Chandigarh', 'Inactive');
+
+
+
+An aggregate function is a function that performs a calculation on a set of values, and returns a single value.
+
+MAX() - returns the largest value within the selected column
+
+    select MAX(salary) from employee; 
+
+MIN() - returns the smallest value within the selected column
+
+    select MIN(salary) from employee; 
+
+COUNT() - returns the number of rows in a set
+
+    select count(salary) from employee; 
+    select count(*) from employee; 
+    
+SUM() - returns the total sum of a numerical column
+
+    select SUM(salary) from employee; 
+
+AVG() - returns the average value of a numerical column
+
+    select AVG(salary) from employee; 
+    
+
+----------------------------------------------------------------------------
+
+
+Employees from IT department with salary > 60000.
+
+    select * from employee where dept = 'IT'  AND salary > 60000; 
+
+
+Employees who are Active and work in Ahmedabad.
+
+    select * from employee where status = 'Active' and city = 'Ahmedabad'; 
+    
+
+
+
+
+Employees from HR or Finance department.
+
+    select  * from employee where dept = 'HR'  or dept = 'Finance' ; 
+
+Employees whose salary is between 40000 and 60000.
+    select * from employee where salary between 40000 and 60000; 
+
+Employees from cities Ahmedabad, Pune, Delhi.
+    select * from employee where city = 'Ahmedabad' OR city = 'Pune' OR city = 'Delhi' ; 
+    select * from employee where city IN ('Ahmedabad','Pune','Delhi');
+
+
+Employees not in IT department.
+    select * from employee where dept != 'IT' ; 
+
+
+
+
+Employees hired after 2021-01-01.
+
+    select * from employee where hire_date > '2021-01-01';
+    select * from employee where hire_date > '01-Jan-2021';
+
+
+Employees hired between 2019 and 2021.
+
+    select * from employee where hire_date >= '01-Jan-2019' and hire_date <= '31-Dec-2021';
+    select * from employee where hire_date between '01-Jan-2019' and  '31-Dec-2021';
+    
+
+
+List all employees ordered by salary descending.
+
+    select * from employee order by salary DESC; 
+
+
+Count total cities.
+
+    select count(city) from employee; 
+
+
+Count total cities uniqly.
+
+select distinct city from employee; 
+
+select count(distinct city) from employee; 
+
+
+
+
+
+
+---------------------------------------------------------------------
+Employees whose first name starts with 'A'.
+
+        select first_name , city from employee where first_name like 'A%';
+
+
+Employees whose last name ends with 'a'.
+
+    
+select first_name , city from employee where first_name like '%a';
+select last_name , city from employee where first_name like '%a';
+
+
+start with A and ends with a 
+
+
+select first_name , city from employee where first_name like 'A%a';
+
+first_name -> second letter is 'a' 
+
+ 
+select first_name from employee where first_name like  '_a%'; 
+
+
+------------------------------------------------------------------------------------
+CREATE TABLE student (
+    student_id INT PRIMARY KEY,
+    first_name VARCHAR(50),
+    last_name VARCHAR(50),
+    course VARCHAR(50),
+    year INT,
+    fees DECIMAL(10,2),
+    join_date DATE,
+    city VARCHAR(30),
+    status VARCHAR(15)
+);
+
+
+INSERT INTO student VALUES
+(201, 'Rohit', 'Patel', 'Java', 1, 45000, '10-JAN-2023', 'Ahmedabad', 'Active'),
+(202, 'Sneha', 'Shah', 'Python', 2, 50000, '15-JUL-2022', 'Surat', 'Active'),
+(203, 'Aman', 'Verma', 'Data Science', 1, 70000, '05-MAR-2023', 'Delhi', 'Active'),
+(204, 'Neel', 'Mehta', 'Java', 3, 48000, '12-JUN-2021', 'Ahmedabad', 'Completed'),
+(205, 'Kajal', 'Desai', 'Web Dev', 2, 42000, '20-AUG-2022', 'Vadodara', 'Active'),
+(206, 'Harsh', 'Joshi', 'AI', 1, 90000, '01-FEB-2024', 'Pune', 'Active'),
+(207, 'Pooja', 'Nair', 'Python', 3, 52000, '18-JAN-2021', 'Kochi', 'Completed'),
+(208, 'Vikas', 'Singh', 'Java', 2, 46000, '10-SEP-2022', 'Delhi', 'Active'),
+(209, 'Riya', 'Kapoor', 'Data Science', 1, 75000, '25-JAN-2023', 'Delhi', 'Active'),
+(210, 'Manav', 'Gupta', 'Web Dev', 3, 40000, '15-JUL-2021', 'Jaipur', 'Completed'),
+
+(211, 'Ankit', 'Reddy', 'AI', 2, 88000, '10-MAR-2023', 'Hyderabad', 'Active'),
+(212, 'Nisha', 'Kulkarni', 'Python', 1, 51000, '05-FEB-2024', 'Pune', 'Active'),
+(213, 'Arjun', 'Patil', 'Java', 2, 47000, '12-AUG-2022', 'Nashik', 'Active'),
+(214, 'Sonal', 'Bansal', 'Web Dev', 1, 43000, '20-JAN-2024', 'Indore', 'Active'),
+(215, 'Mehul', 'Trivedi', 'Data Science', 2, 72000, '18-JUN-2022', 'Ahmedabad', 'Active'),
+(216, 'Isha', 'Malhotra', 'AI', 3, 95000, '15-JAN-2021', 'Chandigarh', 'Completed'),
+(217, 'Deep', 'Sharma', 'Python', 2, 53000, '11-JUL-2022', 'Ahmedabad', 'Active'),
+(218, 'Kiran', 'Iyer', 'Web Dev', 1, 41000, '01-MAR-2024', 'Mumbai', 'Active'),
+(219, 'Neha', 'Roy', 'Java', 3, 49000, '10-JUN-2021', 'Kolkata', 'Completed'),
+(220, 'Sanjay', 'Agarwal', 'Data Science', 1, 76000, '05-FEB-2023', 'Udaipur', 'Active');
+
+
+
+ 
+
+Display all students.
+
+Show student_id, first_name, last_name, and course only.
+
+List students who are Active.
+
+Find students from Ahmedabad.
+
+Display students enrolled in Java course.
+
+ 
+
+Students who are Active and from Delhi.
+
+Students enrolled in Python with fees > 50000.
+
+Students in Data Science or AI courses.
+
+Students from Pune with year = 1.
+
+Students who are Completed and from Ahmedabad.
+
+ 
+
+Students from cities Ahmedabad, Pune, Delhi.
+
+Students whose fees are between 45000 and 75000.
+
+Students whose first name starts with 'A'.
+
+Students whose last name ends with 'a'.
+
+Students whose course contains 'Dev'.
+ 
+Students who joined after 01-JAN-2023.
+
+Students who joined between 01-JAN-2022 and 31-DEC-2023.
+
+ 
+List students ordered by fees descending.
+ 
+
+List students ordered by join_date ascending.
+
+Find courses having more than 3 students.
+
+ 
+Active students in AI or Data Science with fees > 70000.
+
+Show distinct list of cities where students come from.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Top 5 highest paid employees.
+
+

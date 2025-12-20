@@ -1,0 +1,170 @@
+Rule : Constraints 
+
+key ->
+
+        primary key -> 
+                            uniqly identify records 
+                            not null
+                            unique
+
+
+
+Royal rule -> create a table -> you must have to add primary key 
+
+
+-------------------------------------------------------------------------------
+books
+
+    bookId
+    bookName
+    authorName
+    publication 
+    category 
+    price 
+
+
+create table books (    
+    bookId number primary key,
+    bookName varchar2(30),
+    authorName varchar2(30),
+    publication varchar2(30),
+    category varchar2(20),
+    price number 
+);
+
+desc books; 
+
+-------------------------------------------------------------------------------
+
+required -> not null 
+
+
+create table books (    
+    bookId number primary key,
+    bookName varchar2(30) not null,
+    authorName varchar2(30) not null,
+    publication varchar2(30) not null,
+    category varchar2(20) not null,
+    price number not null
+);
+
+-------------------------------------------------------------------------------
+
+check Constraints 
+
+
+create table books (    
+    bookId number primary key,
+    bookName varchar2(30) not null,
+    authorName varchar2(30) not null,
+    publication varchar2(30) not null,
+    category varchar2(20) not null,
+    price number not null check (price > 0)
+);
+
+-------------------------------------------------------------------------------
+
+primary key - not null + unique
+not null 
+check 
+default 
+
+create table books (    
+    bookId number primary key,
+    bookName varchar2(30) not null,
+    authorName varchar2(30) not null,
+    publication varchar2(30) not null,
+    category varchar2(20) default 'technology',
+    price number not null check (price > 0)
+);
+
+
+
+
+--------------------------------------------------------------------------------
+
+books 
+
+    bookId -> primary key 
+    bookName -> not null
+    authorName -> not null
+    price -> must be greater than 0 
+    category -> if user does not specify then technology will add as a category 
+    publication -> not null 
+
+
+
+-------------------------------------------------------------------------------------
+
+
+100     C       Bala Guru       500         language          Mcgrow 
+200     CPP     Yashwant        600         language          Mcgrow   
+300     Java    Kethi           1500        language          Times
+400     JEE     Kethi           2000        technology        BlackRock  
+500     Python  Bala Guru       750         language          Times 
+
+
+
+-------------------------------------------------------------------------------------
+
+query 1:  display all the books published by Times 
+
+query 2:  display all the books which can be sold below 1000 
+
+query 3:  find out how much we need to pay if we want to buy all the books 
+
+query 4: find out book name which is highest in price 
+
+query 5: display all the book sorted by their price in highest to lowest 
+
+query 6: print all the books which belongs to Mcgrow or BlackRock 
+
+Query 7: Show the details of the book with BookId = 300.
+
+Query 8: Find the cheapest book.
+
+Query 9: Find the total price of all books written by 'Bala Guru'.
+
+Query 10: List books where the price is greater than the average price of all books.
+
+Query 11: show the second highest priced book. 
+
+Query 12: Find books whose author name starts with 'B'.
+
+Query 13: Display all books where author name contains 'Guru'.
+
+ 
+-------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

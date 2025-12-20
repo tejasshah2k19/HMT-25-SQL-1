@@ -68,13 +68,29 @@ projects
 
 
 
+books 
+
+    bookId -> primary key 
+    bookName -> not null
+    authorName -> not null
+    price -> must be greater than 0 
+    category -> if user does not specify then technology will add as a category 
+    publication -> not null 
 
 
 
+-------------------------------------------------------------------------------------
+
+
+100     C       Bala Guru       500         language          Mcgrow 
+200     CPP     Yashwant        600         language          Mcgrow   
+300     Java    Kethi           1500        language          Times
+400     JEE     Kethi           2000        technology        BlackRock  
+500     Python  Bala Guru       750         language          Times 
 
 
 
-
+-------------------------------------------------------------------------------------
 
 
 
