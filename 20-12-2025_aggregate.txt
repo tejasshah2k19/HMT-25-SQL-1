@@ -233,10 +233,18 @@ Students who joined between 01-JAN-2022 and 31-DEC-2023.
  
 List students ordered by fees descending.
  
+SELECT * FROM STUDENT ORDER BY FEES DESC ; 
+
 
 List students ordered by join_date ascending.
 
+SELECT * FROM STUDENT ORDER BY JOIN_DATE;
+SELECT * FROM STUDENT ORDER BY JOIN_DATE ASC; 
+
+
 Find courses having more than 3 students.
+select course,count(*) from student group by course; 
+select course,count(*) from student group by course having count(*) > 3 ;
 
  
 Active students in AI or Data Science with fees > 70000.
@@ -245,29 +253,48 @@ Show distinct list of cities where students come from.
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 Top 5 highest paid employees.
+----------------------------------------------
+
+BASIC :- 
+Find the total number of students whose status is 'Active'.
+
+Calculate the sum of fees for students enrolled in the course 'Java'.
+
+Find the average fees of students from the city 'Ahmedabad'.
+
+Display the maximum fees paid by students whose year is 2024.
+
+Find the minimum fees of students having status 'Inactive'.
+
+Count the number of students who joined after 2023-01-01.
+
+Calculate the total fees collected from students of course 'Python' and status 'Active'.
+
+Find the average fees of students who joined in the year 2022.
+
+Count how many students are from the city 'Surat' and enrolled in year 2023.
+
+Find the maximum fees among students from city 'Mumbai'.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

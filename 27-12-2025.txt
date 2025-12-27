@@ -1,0 +1,119 @@
+1)where 
+2)order by 
+3)group by 
+4)having 
+5)to_char 
+
+Where  -> condition -> 
+
+order by -> sorting -> ASC DSC ->
+
+            eid name   salary
+            1     x     25000
+            2     y     30000
+            3     z     15000 
+
+    select * from employees order by salary ; //small to large -> ASC 
+
+            eid name   salary
+            3     z     15000 
+            1     x     25000
+            2     y     30000
+
+
+    select * from employees order by salary  DESC ; //small to large -> ASC 
+
+            eid name   salary
+            2     y     30000
+            1     x     25000
+            3     z     15000
+
+
+select count(first_name) from student; 
+select count(*) from student; 
+
+select count(city) from student; 
+
+ 
+select city, count(*) from student  group by city; 
+
+select city, count(*) from student where fees < 60000 group by city; 
+
+select course, count(*) from student where fees < 60000 group by course; 
+
+
+
+
+to_char -> extraction 
+
+1-Jan-2025 
+    month => 
+    year => 
+    day => 
+
+
+    select join_date from student -> all join date dd-mon-yyyy 
+
+    select to_char(join_date,'yyyy') from student; 
+    select to_char(join_date,'yyyy'),count(*) from student group by to_char(join_date,'yyyy'); 
+
+    select to_char(join_date,'yyyy'),count(*) from student GROUP BY to_char(join_date,'yyyy') having count(*) > 5 ; 
+
+
+---------------------------------------------------------------------------------------------
+
+
+1) print how many cities we have in student table : 14
+2) print all the cities from student table , do not print duplicate city : AHD SURAT ....  
+
+3) Display all students ordered by their join_date from newest to oldest.
+
+4) List all distinct cities where students belong.
+
+5) Find the total number of students in each course.
+
+6) Show the average fees for each course.
+
+7) Display each city with the number of students, ordered by count in descending order.
+
+8) Find courses where the total fees collected is greater than 150000.
+
+9) List the years in which more than 5 students are enrolled.
+
+10) For each course, show the maximum and minimum fees.
+
+11) Display courses having an average fees greater than 40000.
+
+12) List distinct courses ordered alphabetically.
+
+********Tough Questions**************
+Find the top 3 cities with the highest number of students, ordered by count descending.
+
+List courses where the average fees is higher than the overall average fees of all students.
+
+Display cities that have at least 2 different courses running.
+
+Show years in which the total fees collected is maximum, ordered from highest to lowest.
+
+Find courses where the difference between max and min fees is greater than 20000.
+
+List cities having more students than the average student count per city.
+
+Display courses that have more than 5 students and sort them by total fees collected descending.
+
+Find years where the average fees is greater than the average fees of year 2024.
+
+Show city and course combinations having at least 3 students enrolled.
+
+List courses where more than 50% of students have status = 'Active'.
+****************************************************************************
+
+
+select city from student;
+
+select distinct city from student; 
+
+select count(distinct city) as "Total cities" from student; 
+
+select city from student group by city
+

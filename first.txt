@@ -1,0 +1,170 @@
+Data 
+
+INFORMATION 
+
+DataBase 
+
+DBMS 
+
+RDBMS 
+
+Oracle , PG , MySql , MsSql Server 
+
+------------------------------------------------------------
+
+freesql.com 
+
+
+
+------------------------------------------------------------
+INFORMATION -> DataBase -> DBMS -> code ? 
+            SQL --->    ORACLE , MySql , PG , MSSQL 
+
+    SQL 
+
+    DDL 
+    DML
+    DCL 
+    TCL 
+
+----------------------------------------------------------------
+
+query -> commands -> 
+
+
+----------------------------------------------------------------
+
+format -> SQL -> Table -> RDBMS -> relational : table 
+
+
+table -> row * cols 
+
+    col -> field 
+    row -> tuple 
+
+
+example : 
+
+        employee 
+    employeeId      firstName       lastName        salary      department          city 
+    1               Jack            Patel           25000       HR                  Ahmedabad
+    2               Sam             Gupta           35000       Admin               Surat
+    3               Rock            Sharma          40000       Faculty             Baroda
+
+----------------------------------------------------------------------------------------------
+
+DDL -> on the table 
+DML -> inside the table 
+
+----------------------------------------------------------------------------------------------
+
+CREATE 
+INSERT 
+SELECT 
+
+----------------------------------------------------------------------------------------------
+
+SQL :  Data Type 
+
+    char
+    varchar
+    varchar2
+
+    firstName char(30)
+
+    Rock -> {30} {4}  {-26} 
+    100*30
+
+    firstName varchar(30)
+    Rock -> {max:30} {actual:4} {26:release}
+
+    ORACLE 
+    firstName varchar2(30)
+    Rock -> {max:30} {actual:4} {26:release}
+
+
+
+
+    number 
+    int 
+    integer 
+    float 
+
+
+CREATE TABLE  employees (
+    employeeId int,
+    firstName varchar2(25),
+    lastName varchar2(25),
+    salary int,
+    department varchar2(20),
+    city varchar2(15)
+);
+
+----------------------------------------------------------------------------------------------
+
+Insert into EMPLOYEES (EMPLOYEEID,FIRSTNAME) values (1,'Rock');
+Insert into EMPLOYEES (EMPLOYEEID,FIRSTNAME,LASTNAME,salary,department,city) values (2,'Jack','Patel',15000,'HR','Ahmedabad');
+
+Insert into employees values (3,'Sakira','Gupta',25000,'Sales','Baroda');
+
+select * from employees
+
+----------------------------------------------------------------------------------------------
+
+
+Data type	Description
+
+CHAR(size)	It is used to store character data within the predefined length. It can be stored up to 2000 bytes.
+VARCHAR(SIZE)	It is the same as VARCHAR2(size). You can also use VARCHAR(size), but it is suggested to use VARCHAR2(size)
+VARCHAR2(size)	It is used to store variable string data within the predefined length. It can be stored up to 4000 byte.
+
+Numeric Data Types
+NUMBER(p, s)	It contains precision p and scale s. The precision p can range from 1 to 38, and the scale s can range from -84 to 127.
+FLOAT(p)	It is a subtype of the NUMBER data type. The precision p can range from 1 to 126.
+int 
+
+
+DATE	It is used to store a valid date-time format with a fixed length. Its range varies from January 1, 4712 BC to December 31, 9999 AD.
+TIMESTAMP	It is used to store the valid date in YYYY-MM-DD with time hh:mm:ss format.
+
+
+BLOB	It is used to specify unstructured binary data. Its range goes up to 232-1 bytes or 4 GB.
+CLOB	It is used for single-byte character data. Its range goes up to 232-1 bytes or 4 GB.
+
+
+
+
+----------------------------------------------------------------------------------------------
+
+
+table -> record -> 
+
+        SELECT * from Employees; 
+
+        SELECT FIRSTNAME from Employees; 
+        
+        select * from employee;
+        select firstname , lastName from employees;
+
+
+how to check schema / structure of your table. 
+    describe 
+    desc tableName; 
+
+
+List all employees who lives in Ahmedabad 
+    where 
+    condition -> where -> 
+    select * from employee where city = 'Ahmedabad' 
+    select * from employee where city like 'Ahmedabad' ;
+
+List all employees who lives in Ahmedabad and Earn more than 50000; 
+    select * from employee where city = 'Ahmedabad'  AND salary > 50000;
+    select * from employee where city = 'Ahmedabad'  AND salary >= 50000;
+
+
+List all the employees who are in Ahmedabad, Surat , Vadodara 
+    select * from employee where city = 'Ahmedabad' OR  city = 'Surat' OR city = 'Vadodara'     
+
+
+
