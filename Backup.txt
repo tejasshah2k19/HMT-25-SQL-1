@@ -1,0 +1,214 @@
+
+
+Create Table 
+
+int 
+integer 
+number 
+float 
+
+char 
+varchar 
+varchar2 
+
+BLOB
+CLOB 
+
+DATE
+DATETIME 
+Timestamp   2584521484544  
+
+
+-------------------------------------------------------------------------
+
+INSERT 
+ 
+        Name       Null?    Type         
+---------- -------- ------------ 
+STUDENT_ID NOT NULL NUMBER(38)   
+FIRST_NAME          VARCHAR2(50) 
+LAST_NAME           VARCHAR2(50) 
+COURSE              VARCHAR2(50) 
+YEAR                NUMBER(38)   
+FEES                NUMBER(10,2) 
+JOIN_DATE           DATE         
+CITY                VARCHAR2(30) 
+STATUS              VARCHAR2(15) 
+
+
+CREATE TABLE STUDENT (
+    STUDENT_ID NUMBER NOT NULL,
+    FIRST_NAME varchar2(50),
+    LAST_NAME varchar2(50),
+    COURSE varchar2(50),
+    YEAR NUMBER,
+    FEES NUMBER(10,2),
+    JOIN_DATE DATE,
+    CITY VARCHAR2(30),
+    STATUS varchar2(15)
+);
+
+
+INSERT into STUDENT (STUDENT_ID,FIRST_NAME,COURSE)  VALUES (123,'Ram','JAVA'); 
+
+INSERT into STUDENT VALUES (123,'Ram','Patel','JAVA',2002,25000,'10-Jan-2025','Surat','Active'); 
+
+
+**PRODUCTS**
+PRODUCT_ID   NOT NULL NUMBER        
+PRODUCT_NAME NOT NULL VARCHAR2(100) 
+QTY                   NUMBER(10)    
+PRICE        NOT NULL NUMBER(10,2)  
+CATEGORY              VARCHAR2(50)  
+IS_AVAILABLE          CHAR(1)       
+DISCOUNT              NUMBER(5,2)  
+
+
+
+
+SELECT -> read / print / fetch all the records from the table 
+
+
+SELECT PRODUCT_NAME From PRODUCTS; 
+
+
+SELECT PRODUCT_NAME , PRICE From PRODUCTS; 
+
+SELECT * FROM PRODUCTS;  
+
+SELECT PRODUCT_NAME , PRICE , QTY , PRICE * QTY From PRODUCTS; 
+
+
+---- Restrict Your Data --- condition ----- 
+    WHERE 
+
+
+SELECT * FROM PRODUCTS;  
+
+SELECT * FROM PRODUCTS WHERE QTY < 10 ;  
+
+
+50000 < 
+
+SELECT * FROM PRODUCTS WHERE PRICE <= 50000 ;
+
+
+SELECT * FROM PRODUCTS WHERE PRICE >= 15000  AND PRICE <= 75000 ;
+
+SELECT * FROM PRODUCTS WHERE PRICE BETWEEN 15000 AND 75000;
+
+
+SELECT * FROM PRODUCTS WHERE CATEGORY = 'Electronics' 
+
+
+
+--------------------------------------------------
+
+
+1) Fetch PRODUCT_NAME, PRICE, QTY from PRODUCTS.
+2) Display all products where QTY is available (greater than 0).
+3) Display PRODUCT_NAME and total value (PRICE × QTY) for each product.
+4) Display products where PRICE is less than 10,000.
+5) Display products where PRICE is not equal to 30,000.
+6) Fetch products where QTY is between 5 and 20.
+7) Fetch products where CATEGORY is 'Furniture' and it's  QTY is less than 5.
+
+
+--------------------------------------------------
+DROP TABLE PRODUCTS; 
+
+create 
+
+insert 
+
+
+
+----------------------------------
+
+aggregate 
+    SUM , MAX , MIN , AVG , COUNT 
+
+  select sum(price) from products; 
+
+  select MAX(price) from products; 
+
+  select MIN(price) from products; 
+   
+  select AVG(price) from products; 
+
+  SELECT COUNT(*) FROM PRODUCTS;
+
+  SELECT COUNT(price) FROM PRODUCTS;
+  
+  SELECT COUNT(*) FROM PRODUCTS WHERE CATEGORY = 'Electronics' ;
+    
+    
+  SELECT COUNT(*) FROM PRODUCTS WHERE CATEGORY LIKE 'E%' ;
+
+  SELECT COUNT(*) FROM PRODUCTS WHERE CATEGORY LIKE '%E' ;
+
+  SELECT COUNT(*) FROM PRODUCTS WHERE CATEGORY LIKE 'E%E' ;
+ 
+
+  ----------------------------------
+
+  WHERE condition multiple 
+
+            AND -> all condition must satisfy   
+            OR  -> either or condtion  
+
+            
+  ----------------------------------
+
+ Sort Your Data -> ORDER BY 
+    
+    A to Z Product Name 
+    Price Lowest to highest 
+    Price highest to Lowest 
+
+
+    SELECT * FROM PRODUCTS ORDER BY PRICE; 
+    
+    SELECT * FROM PRODUCTS ORDER BY PRICE ASC ; 
+    
+    SELECT * FROM PRODUCTS ORDER BY PRICE DESC; 
+
+    SELECT * FROM PRODUCTS ORDER BY PRODUCT_NAME ASC , PRICE DESC ; 
+
+
+
+
+
+
+
+
+  
+     
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

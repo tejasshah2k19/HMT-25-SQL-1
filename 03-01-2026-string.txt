@@ -1,0 +1,112 @@
+ select length(First_name) from student
+
+
+ 
+  select concat(First_name,last_name) from student
+
+  
+  select concat(First_name,' ',last_name) from student
+
+  
+  select concat(First_name,' ',last_name)  AS  "Full Name" from student
+
+  
+  select concat(First_name,' ',last_name) AS FullName from student
+
+
+  firstName => FIRSTNAME 
+
+  select UPPER(first_name) from student; 
+
+  select Lower(first_name) from student; 
+
+
+  print entire full name in upper case !!! 
+
+  select UPPPER( CONCAT(first_name,' ',last_name) ) AS "FULL NAME" From STUDENT;
+
+
+  Rohit is doing Java 
+  Malhar is doing Python 
+  
+  course -> AI -> Artifical Inte. 
+
+  select concat(first_name,' is doing ',replace(course,'AI','Artifical')) from student; 
+
+  select replace( course,'AI','Artifical Inte') from student; 
+
+
+  substring 
+
+
+  select SUBSTR(course,1,2) from STUDENT; 
+
+
+  select SUBSTR(course,1,1) from STUDENT; 
+  
+  select SUBSTR(course,2,3) from STUDENT; //start and total number of chracters 
+
+ 
+
+   
+   FirstName  LastName   CourseCODE 
+   Rohit        XXXX        JA 
+   Manyata      XXXX        PY 
+
+ 
+  SELECT First_name , last_name , SUBSTR(course,1,2) AS CourseCODE  from STUDENT; 
+
+
+
+
+LENGTH()
+CONCAT()
+REPLACE()
+UPPER()
+LOWER()
+SUBSTR()
+
+
+First_Name  FEES 
+Ram         *****1000
+Laxman      ****11000
+
+select First_Name, LPAD(fees,9,'*') From Student 
+
+
+LPAD
+RPAD 
+
+
+1) Find the length of each student’s first name.
+2) Display full name by joining FIRST_NAME and LAST_NAME without space.
+3) Display full name by joining FIRST_NAME and LAST_NAME with space.
+4) Display full name with column alias "FULL NAME".
+5) Create a username using:
+        first 3 letters of FIRST_NAME + first 2 letters of LAST_NAME.
+6) Print full name completely in lowercase.
+7) Print All Course name ,Replace course name JAVA with JAVA PROGRAMMING.
+8) Mask FEES using RPAD with # so total length becomes 12.
+9) Display city name in uppercase and show its length.
+10) Display FIRST_NAME and show whether its length is greater than 5
+    FirstName Length>5 
+    Ram         0 or FALSE 
+    Shyam       0 or FALSE 
+    Vibhishan   1 or TRUE 
+
+11) Display FirstName with first 3 chracters and hide other characters using # 
+        Rav#####
+        Lax#####
+        Sita####
+        Jam#####
+12) Print FirstName and Palidnrome Status    { reverse  } 
+    FirstName   Palidnrome?
+    Ram             0
+    Laxman          0
+    MADAM           1
+    CARCAR          0
+    RACECAR         1
+
+13) Extract middle 3 characters of All FirstName 
+
+-------------------------------------------------------------------------------------
