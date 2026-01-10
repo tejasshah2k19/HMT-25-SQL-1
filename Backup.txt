@@ -176,9 +176,194 @@ aggregate
     SELECT * FROM PRODUCTS ORDER BY PRODUCT_NAME ASC , PRICE DESC ; 
 
 
+------------------------------------------------------
+
+1) print all the products details 
+    select * from products 
+
+2) display all the products belogns to Electronics 
+    select * from products where category = 'Electronics'  
+
+3) display all the products who contains 's' in the category 
+    select * from products where category like '%s%' 
+
+4) find out the costliest product 
+    select max(price) from products;     
+    select * from products where price = (select max(price) from products);
+
+5) print sum of all the products. 
+    select SUM(price) from products; 
+
+6) print sum of all products categorywise. 
+
+    Electronics     55000
+    Home Appli      45000
+
+    select  category , sum(price) from products group by category; 
+
+7) count how many products are expenisive ( 50000 +)
+    select count(*) from products where price > 50000;
+
+------------------------------------------------------------
 
 
 
+
+
+    Select * from student; 
+
+    select first_name from student; 
+
+    select first_name , length(first_name) AS Len from student
+
+    select first_name , length(first_name) AS "Len of firstname" from student
+
+    select length(First_name) from student
+
+    print full name of the student in single column
+
+    select concat(first_name ,' ', last_name) as "FULL NAME"  from student
+
+    select concat(First_name,last_name) from student
+
+    
+    select concat(First_name,' ',last_name) from student
+
+    
+    select concat(First_name,' ',last_name)  AS  "Full Name" from student
+
+    
+    select concat(First_name,' ',last_name) AS FullName from student
+
+
+    print firstName in upper case and last name in lowecase 
+
+    select upper(first_name) , lower(first_name) from student
+
+    firstName => FIRSTNAME 
+
+    select UPPER(first_name) from student; 
+
+    select Lower(first_name) from student; 
+
+    Print Entire FullName in UpperCase 
+
+    select upper(concat(first_name,' ',last_name)) from student 
+
+    select UPPPER( CONCAT(first_name,' ',last_name) ) AS "FULL NAME" From STUDENT;
+
+    Rohit is doing Java 
+    Malhar is doing Python 
+  
+    select concat(first_name,' is doing ',course) from student; 
+
+
+    Rohit is doing Ja 
+    Malhar is doing Py 
+
+    select concat(first_name,' is doing ',SUBSTR(course,1,2) ) from student; 
+
+    Rohit is doing Java 
+    Shyam is doing AI
+
+    select concat(first_name,' is doing ',replace(course,'Artifical','AI')) from student; 
+
+  course -> AI -> Artifical Inte. 
+
+  select concat(first_name,' is doing ',replace(course,'AI','Artifical')) from student; 
+
+  select replace( course,'AI','Artifical Inte') from student; 
+
+
+  substring 
+
+
+  select SUBSTR(course,1,2) from STUDENT; 
+
+
+  select SUBSTR(course,1,1) from STUDENT; 
+  
+  select SUBSTR(course,2,3) from STUDENT; //start and total number of chracters 
+
+   FirstName  LastName   CourseCODE 
+   Rohit        XXXX        JA 
+   Manyata      XXXX        PY 
+
+   select first_name , last_name , upper( substr(course,1,2) ) COURSE_CODE from student; 
+
+    LENGTH()
+    CONCAT()
+    REPLACE()
+    UPPER()
+    LOWER()
+    SUBSTR()
+ 
+    First_Name  FEES 
+    Ram         *****1000
+    Laxman      ****11000
+
+    select First_Name, LPAD(fees,9,'*') From Student 
+
+    LPAD
+    RPAD 
+
+
+
+    
+1) Find the length of each student’s first name.
+2) Display full name by joining FIRST_NAME and LAST_NAME without space.
+3) Display full name by joining FIRST_NAME and LAST_NAME with space.
+4) Display full name with column alias "FULL NAME".
+5) Create a username using:
+        first 3 letters of FIRST_NAME + first 2 letters of LAST_NAME.
+
+6) Print full name completely in lowercase.
+7) Print All Course name ,Replace course name JAVA with JAVA PROGRAMMING.
+8) Mask FEES using RPAD with # so total length becomes 12.
+9) Display city name in uppercase and show its length.
+10) Display FIRST_NAME and show whether its length is greater than 5
+    FirstName Length>5 
+    Ram         0 or FALSE 
+    Shyam       0 or FALSE 
+    Vibhishan   1 or TRUE 
+
+11) Display FirstName with first 3 chracters and hide other characters using # 
+        Rav#####
+        Lax#####
+        Sita####
+        Jam#####
+12) Print FirstName and Palidnrome Status    { reverse  } 
+    FirstName   Palidnrome?
+    Ram             0
+    Laxman          0
+    MADAM           1
+    CARCAR          0
+    RACECAR         1
+
+13) Extract middle 3 characters of All FirstName 
+
+-------------------------------------------------------------------------------------
+
+ Display FIRST_NAME and show the last 2 characters of the name.
+(Example: Ramesh → sh, Meera → ra)
+
+Show FIRST_NAME with the first letter in uppercase and the rest in lowercase.
+(Example: rAmEsH → Ramesh)
+
+Display FIRST_NAME and count how many vowels it contains.
+
+Replace all occurrences of letter 'A' with '@' in FIRST_NAME.
+
+Display FIRST_NAME padded on the left with * so the total length becomes 10.
+
+Display LAST_NAME without the first character.
+(Example: Shah → hah)
+
+Display FIRST_NAME where the length is an even number.
+
+Display FULL NAME as “LastName, FirstName”.
+
+Show FIRST_NAME and check if it starts with letter ‘S’.
 
 
 
