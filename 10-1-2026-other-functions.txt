@@ -1,0 +1,174 @@
+String Functions 
+
+Numeric Functions
+
+    select ceil(49.59) from dual;
+
+    select ceil(totalBill) from order;
+
+
+    ceil()  49.59  49.15  
+    floor() 
+
+    49.59 -> 50 
+    
+    51
+    50
+      49.59 
+    49
+    48
+    1
+    0
+    -1
+    -2
+    
+
+    ceil(49.59) -> 50 
+    floor(49.59) -> 49 
+   
+    find out the average of product price. 
+        
+        select avg(price) from products
+        32568.70
+
+        select round(avg(price)) from products ;
+        32569  
+
+        select trunc(avg(price)) from products; 
+        32568
+
+        2026
+        select mod(2026,2) from dual; 
+
+
+
+Questions :
+        1) Show products where the difference between QTY and PRICE is more than 50
+                qty - price 
+                select qty-price from products; 
+                select abs(qty-price) from products; 
+
+                select * from products where abs(qty-price) > 50;
+
+        2) Display PRODUCT_NAME and absolute value of (PRICE - DISCOUNT)
+
+        
+        
+        3) for all the product , price should be next whole number 
+
+
+
+
+
+
+Date / Time Function 
+-----------------------
+
+NEXT_DAY()
+NEXT_DAY(date,'DAY')
+
+
+
+CREATE TABLE orders (
+  order_id NUMBER(10),
+  customer_name VARCHAR2(100),
+  order_date DATE,
+  delivery_date DATE,
+  
+  total_amount NUMBER(10,2),
+  status VARCHAR2(20)
+);
+
+INSERT INTO orders VALUES (101, 'Ramesh', TO_DATE('2025-01-15', 'YYYY-MM-DD'), TO_DATE('2025-01-20', 'YYYY-MM-DD'), 1500.75, 'Delivered');
+INSERT INTO orders VALUES (102, 'Suresh', TO_DATE('2025-02-01', 'YYYY-MM-DD'), TO_DATE('2025-02-10', 'YYYY-MM-DD'), 750.50, 'Pending');
+INSERT INTO orders VALUES (103, 'Anita', TO_DATE('2024-12-20', 'YYYY-MM-DD'), TO_DATE('2024-12-25', 'YYYY-MM-DD'), 2200.00, 'Delivered');
+INSERT INTO orders VALUES (104, 'Tejas', TO_DATE('2025-03-05', 'YYYY-MM-DD'), TO_DATE('2025-03-12', 'YYYY-MM-DD'), 1200.40, 'Shipped');
+INSERT INTO orders VALUES (105, 'Karan', TO_DATE('2025-01-10', 'YYYY-MM-DD'), TO_DATE('2025-01-15', 'YYYY-MM-DD'), 3400.10, 'Delivered');
+INSERT INTO orders VALUES (106, 'Priya', TO_DATE('2025-02-17', 'YYYY-MM-DD'), TO_DATE('2025-02-25', 'YYYY-MM-DD'), 900.00, 'Cancelled');
+INSERT INTO orders VALUES (107, 'Nikita', TO_DATE('2025-01-25', 'YYYY-MM-DD'), TO_DATE('2025-01-31', 'YYYY-MM-DD'), 1800.55, 'Delivered');
+INSERT INTO orders VALUES (108, 'Aman', TO_DATE('2025-03-01', 'YYYY-MM-DD'), TO_DATE('2025-03-08', 'YYYY-MM-DD'), 450.00, 'Pending');
+INSERT INTO orders VALUES (109, 'Harsh', TO_DATE('2024-11-28', 'YYYY-MM-DD'), TO_DATE('2024-12-05', 'YYYY-MM-DD'), 999.99, 'Delivered');
+INSERT INTO orders VALUES (110, 'Pooja', TO_DATE('2025-02-20', 'YYYY-MM-DD'), TO_DATE('2025-02-28', 'YYYY-MM-DD'), 5050.00, 'Shipped');
+
+
+
+1) Show order date, delivery date and days difference of them  
+    select order_date,DELIVERY_DATE ,ORDER_DATE - DELIVERY_DATE  from ORDERS 
+    select order_date,DELIVERY_DATE ,ABS(ORDER_DATE - DELIVERY_DATE)  from ORDERS 
+
+2) Display all the order who will deliver in next FIVE days.
+    select order_date,DELIVERY_DATE ,ABS(ORDER_DATE - DELIVERY_DATE) as NDL from orders where  ABS(order_date-DELIVERY_DATE) <= 5
+
+3) Diplay Customer name and order date and date which is next to monday  
+    15-01-2025 : WED :  20-1-2025   
+    1-2-2025   : XX  :  x
+    20-12-2024 : XX 
+
+    select customer_name , order_date , NEXT_DAY(order_date,'MONDAY') from ORDERS;     
+    select NEXT_DAY(order_date,'MONDAY') from orders; 
+
+
+
+4) print today's date. 
+    select SYSDATE from dual; 
+    select LAST_DAY(sysdate)  from dual; 
+
+5) print today's date and add 3 month in it and print that new date 
+
+    select SYSDATE , ADD_MONTHS(SYSDATE,3) from DUAL; 
+
+6) date of birth 
+
+   SELECT sysdate - to_date('22-01-2004','dd-mm-yyyy') from DUAL; 
+
+   SELECT MONTHS_BETWEEN(sysdate , to_date('22-01-2004','dd-mm-yyyy') )   from DUAL; 
+
+7) Display only month from the order_date 
+    SELECT  EXTRACT(MONTH FROM ORDER_DATE)  from orders; 
+
+    SELECT  order_date,
+        EXTRACT(YEAR FROM order_date) AS order_year,
+        EXTRACT(MONTH FROM order_date) AS order_month,
+        EXTRACT(DAY FROM order_date) AS order_day
+    
+    FROM orders;
+
+
+
+Practice Questions : 
+
+1) Count total orders placed.
+2) Count how many orders are “Delivered”.
+3) Count total customers who placed orders (distinct names).
+4) Find the highest order amount.
+5) Find the lowest order amount.
+6) Show total orders for each STATUS.
+7) Show average order amount for each customer.
+8) Show customers whose total spending is more than 3000.
+9) Show number of orders placed in each month.
+10) Show total amount ordered month-wise
+11) Show total revenue year-wise.
+12) Show total number of delivered orders in 2025.
+
+---------------------------------------------------
+
+
+
+
+
+Conversion Function 
+
+
+Aggregate Function 
+
+
+Analytic Function 
+
+
+Conditional Function
+
+
+Genera Function 
+
+
+Advance Function 
