@@ -1,0 +1,89 @@
+Conversion Function 
+
+Function	Description
+TO_CHAR()	Convert date/number to string
+TO_DATE()	Convert string to date
+TO_NUMBER()	Convert string to number
+CAST()	Convert to specific data type
+TO_TIMESTAMP()	Convert to timestamp
+
+
+
+1) Print Order date in DD MON YYYY format 
+
+    select to_char( order_date , 'DD-MON-YYYY') AS ORDER_DATE from orders; 
+    select to_char( order_date , 'Mon' ) as month From Orders; 
+    select to_char( order_date , 'Month' ) as month From Orders; 
+    
+2) count total orders 
+    select count(*) from orders 
+    SELECT COUNT(order_date) from orders; 
+
+3) count jan month orders? 
+    SELECT COUNT(order_date) from orders where to_char(order_date,'mon') = 'jan'; 
+    SELECT COUNT(order_date) from orders where to_char(order_date,'month') = ' january '; 
+    
+    select length(to_char( order_date , 'Month' )) ,to_char( order_date , 'Month' )  as month From Orders; 
+     
+     SELECT to_char( order_date,'month')  ,   
+    length(to_char( order_date,'month'))  from orders ; 
+
+4) count total order place in  First Quater ==> March April May. 
+        SELECT COUNT(*) FROM ORDERS WHERE TO_CHAR( ORDER_DATE , 'mon' ) = 'mar' ; 
+        SELECT COUNT(*) FROM ORDERS WHERE TO_CHAR( ORDER_DATE , 'mon' ) in ('mar','apr','may')  ; 
+
+5)  Count how many orders we got in 2024 
+        SELECT COUNT(*) FROM ORDERS WHERE TO_CHAR( ORDER_DATE, 'YYYY') = 2024; 
+
+6) Count total orders for each month 
+    count 
+    to_char 
+    group by
+
+    SELECT COUNT(*) FROM ORDERS GROUP BY TO_CHAR( ORDER_DATE , 'MON')
+    SELECT TO_CHAR( ORDER_DATE , 'MON') , COUNT(*) FROM ORDERS GROUP BY TO_CHAR( ORDER_DATE , 'MON')
+
+7)  Count total orders For Each YEAR 
+    SELECT TO_CHAR( ORDER_DATE, 'YYYY' ) , COUNT(*)  FROM ORDERS GROUP BY TO_CHAR( ORDER_DATE, 'YYYY' ); 
+    
+
+
+
+Aggregate Function 
+
+Function	Description
+SUM()	Total
+COUNT()	Row count
+MAX()	Maximum value
+MIN()	Minimum value
+AVG()	Average
+VARIANCE()	Variance
+STDDEV()	Standard deviation
+
+1) print amount of all orders. 
+    SELECT total_amount  FROM ORDERS; 
+
+2) Print Total Order Amount - 
+        SELECT SUM(total_amount) from ORDERs; 
+    
+3) Print Highest Order AMount - 
+        SELECT MAX( total_amount )  from ORDERS; 
+
+4) Print Order_date which having highest order amount. 
+        SELECT * FROM ORDERS WHERE total_amount  = ( select MAX(total_amount) from ORDERS ) ; 
+        SELECT ORDER_DATE FROM ORDERS WHERE total_amount  = ( select MAX(total_amount) from ORDERS ) ; 
+
+5) Print Top 3 ORDER with highest order amount. 
+    print top 3 highest order. 
+
+   SELECT customer_name , order_date, total_amount FROM ORDERS ORDER BY total_amount desc ; 
+
+
+   SELECT customer_name , order_date, total_amount FROM ORDERS ORDER BY total_amount desc
+    FETCH FIRST 3 ROWS ONLY; 
+
+-----------------------------------------------------------------------------------------
+
+
+1) Print all Customer name from order table. 
+2) print all customer name and order amount. 
